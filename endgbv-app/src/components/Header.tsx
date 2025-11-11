@@ -16,13 +16,13 @@ export default function Header(): React.ReactElement {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-red-600 to-pink-600 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <header className="bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-bold text-2xl hover:opacity-90 transition">
-            <span className="text-3xl">🛡️</span>
-            <span>EndGBV</span>
+          <Link to="/" className="flex items-center gap-3 font-extrabold text-2xl hover:opacity-90 transition">
+            <div className="bg-gradient-to-r from-brand-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">🛡️</div>
+            <span className="text-gray-800">EndGBV</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,7 +43,7 @@ export default function Header(): React.ReactElement {
             {/* Emergency Hotline Button */}
             <a
               href="tel:1-800-799-7233"
-              className="bg-yellow-400 text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition flex items-center gap-2"
+              className="hotline flex items-center gap-2"
             >
               📞 1-800-799-7233
             </a>
@@ -51,21 +51,21 @@ export default function Header(): React.ReactElement {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-2xl hover:opacity-90 transition"
+              className="md:hidden text-2xl text-gray-600 hover:opacity-90 transition"
+              aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? '✕' : '☰'}
             </button>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 space-y-3 pb-4 border-t border-red-700 pt-4">
+          <nav className="md:hidden mt-4 space-y-3 pb-4 border-t pt-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="block px-4 py-2 hover:bg-red-700 rounded-lg transition"
+                className="block px-4 py-2 hover:bg-gray-100 rounded-lg transition text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -76,7 +76,7 @@ export default function Header(): React.ReactElement {
                 logout();
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left px-4 py-2 hover:bg-red-700 rounded-lg transition"
+              className="block w-full text-left px-4 py-2 hover:bg-gray-100 rounded-lg transition text-gray-700"
             >
               Logout
             </button>
@@ -85,7 +85,7 @@ export default function Header(): React.ReactElement {
       </div>
 
       {/* Info Bar */}
-      <div className="bg-red-700 px-4 py-2 text-center text-sm">
+      <div className="bg-gray-50 px-4 py-2 text-center text-sm text-gray-600">
         <p>
           🔒 Your information is secure and confidential. You can browse anonymously.
         </p>

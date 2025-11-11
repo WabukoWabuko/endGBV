@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer(): React.ReactElement {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12 mt-16">
+    <footer className="bg-slate-900 text-gray-200 py-12 mt-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
@@ -95,19 +95,19 @@ export default function Footer(): React.ReactElement {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-slate-800 pt-8">
           {/* Call to Action */}
-          <div className="bg-red-600 text-white p-6 rounded-lg mb-8 text-center">
-            <h3 className="text-2xl font-bold mb-2">In Crisis?</h3>
-            <p className="mb-4">Call 1-800-799-7233 or text "START" to 88788</p>
-            <button className="bg-white text-red-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition">
+          <div className="card mb-8 text-center">
+            <h3 className="text-2xl font-bold mb-2 text-gray-800">In Crisis?</h3>
+            <p className="mb-4 text-gray-600">Call 1-800-799-7233 or text "START" to 88788</p>
+            <button className="btn-primary">
               Get Help Now
             </button>
           </div>
 
           {/* Bottom */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>&copy; 2024 EndGBV. All rights reserved. Empowering survivors globally.</p>
+            <p className="text-gray-400">&copy; 2024 EndGBV. All rights reserved. Empowering survivors globally.</p>
             <div className="flex items-center gap-4">
               <p>Follow us:</p>
               <div className="flex gap-3">
